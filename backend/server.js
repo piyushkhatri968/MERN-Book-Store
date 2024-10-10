@@ -27,11 +27,11 @@ mongoose
     console.log(error);
   });
 
-app.get("/", (request, response) => {
+app.get("/api", (request, response) => {
   console.log(request);
   return response.status(234).send("Welcome To MERN Stack Tutorial");
 });
 
-app.use("/books", booksRoute);
+app.use("/api//books", booksRoute);
 
 module.exports = app; // Export the app instead of using app.listen()
