@@ -5,7 +5,7 @@ const cors = require("cors");
 const booksRoute = require("./routes/booksRoute.js");
 const app = express();
 
-const PORT = process.env.PORT;
+// const PORT = process.env.PORT;
 
 // Middleware for parsing request body
 app.use(express.json());
@@ -19,9 +19,9 @@ mongoose
   .connect(mongo_URL)
   .then(() => {
     console.log("App connected to database");
-    app.listen(PORT, () => {
-      console.log(`App is listening to port: ${PORT}`);
-    });
+    // app.listen(PORT, () => {
+    //   console.log(`App is listening to port: ${PORT}`);
+    // });
   })
   .catch((error) => {
     console.log(error);
@@ -33,6 +33,5 @@ app.get("/", (request, response) => {
 });
 
 app.use("/books", booksRoute);
-
 
 module.exports = app; // Export the app instead of using app.listen()
