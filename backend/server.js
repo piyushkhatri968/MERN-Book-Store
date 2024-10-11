@@ -5,17 +5,17 @@ const cors = require("cors");
 const booksRoute = require("./routes/booksRoute.js");
 const app = express();
 
-// const PORT = process.env.PORT;
+const PORT = process.env.PORT;
 
 // Middleware for parsing request body
 app.use(express.json());
 
 // Middleware for handling CORS POLICY
-app.use(cors(
-  {
-    origin:[]
-  }
-));
+app.use(
+  cors({
+    origin: [],
+  })
+);
 
 const mongo_URL = process.env.MONGO_URL;
 
@@ -28,12 +28,12 @@ mongoose
     console.log(error);
   });
 
-app.get("/api", (request, response) => {
+app.get("/", (request, response) => {
   console.log(request);
   return response.status(200).send("Welcome To MERN Stack Tutorial");
 });
 
-app.use("/api/books", booksRoute);
+app.use("/books", booksRoute);
 
 app.listen(PORT, () => {
   console.log(`App is listening to port: ${PORT}`);
