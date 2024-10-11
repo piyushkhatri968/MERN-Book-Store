@@ -11,7 +11,11 @@ const app = express();
 app.use(express.json());
 
 // Middleware for handling CORS POLICY
-app.use(cors());
+app.use(cors(
+  {
+    origin:[]
+  }
+));
 
 const mongo_URL = process.env.MONGO_URL;
 
@@ -19,9 +23,6 @@ mongoose
   .connect(mongo_URL)
   .then(() => {
     console.log("App connected to database");
-    // app.listen(PORT, () => {
-    //   console.log(`App is listening to port: ${PORT}`);
-    // });
   })
   .catch((error) => {
     console.log(error);
@@ -34,4 +35,6 @@ app.get("/api", (request, response) => {
 
 app.use("/api/books", booksRoute);
 
-module.exports = app; // Export the app instead of using app.listen()
+app.listen(PORT, () => {
+  console.log(`App is listening to port: ${PORT}`);
+});
