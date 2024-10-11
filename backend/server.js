@@ -5,17 +5,13 @@ const cors = require("cors");
 const booksRoute = require("./routes/booksRoute.js");
 const app = express();
 
-const PORT = process.env.PORT;
+// const PORT = process.env.PORT;
 
 // Middleware for parsing request body
 app.use(express.json());
 
 // Middleware for handling CORS POLICY
-app.use(
-  cors({
-    origin: [],
-  })
-);
+app.use(cors());
 
 const mongo_URL = process.env.MONGO_URL;
 
