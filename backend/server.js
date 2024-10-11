@@ -13,12 +13,11 @@ app.use(express.json());
 // Middleware for handling CORS POLICY
 app.use(cors());
 
-// const mongo_URL = process.env.MONGO_URL;
+const mongo_URL =
+  "mongodb+srv://piyushkhatri968:BO9SicifrC9zwYmQ@cluster0.dwfhe.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 mongoose
-  .connect(
-    "mongodb+srv://piyushkhatri968:BO9SicifrC9zwYmQ@cluster0.dwfhe.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-  )
+  .connect(mongo_URL)
   .then(() => {
     console.log("App connected to database");
   })
