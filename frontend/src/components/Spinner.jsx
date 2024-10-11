@@ -1,9 +1,22 @@
-import React from 'react'
+import React from "react";
+import { RotatingLines } from "react-loader-spinner";
 
 const Spinner = () => {
   return (
-    <div className='animate-ping w-16 h-16 m-8 rounded-full bg-sky-600'></div>
-  )
-}
+    <div>
+      <RotatingLines
+        visible={true}
+        height="96"
+        width="96"
+        color="grey"
+        strokeWidth="5"
+        animationDuration="0.75"
+        ariaLabel="rotating-lines-loading"
+        wrapperStyle={{}}
+        wrapperClass=""
+      />
+    </div>
+  );
+};
 
-export default Spinner
+export default Spinner;

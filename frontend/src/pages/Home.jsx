@@ -49,7 +49,9 @@ const Home = () => {
         </Link>
       </div>
       {loading ? (
-        <Spinner />
+        <div className="flex justify-center items-center">
+          <Spinner />
+        </div>
       ) : showType === "table" ? (
         <BooksTable books={books} />
       ) : (
