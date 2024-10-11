@@ -20,7 +20,7 @@ const CreateBooks = () => {
       publishYear,
     };
     setLoading(true);
-const live_url = "https://mern-book-store-backend-app.vercel.app/";
+    const live_url = "https://mern-book-store-backend-app.vercel.app/books";
     axios
       .post(live_url, data)
       .then(() => {

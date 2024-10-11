@@ -13,7 +13,7 @@ const DeleteBook = () => {
 
   const handleDeleteBook = () => {
     setLoading(true);
-    const live_url = "https://mern-book-store-backend-app.vercel.app/";
+    const live_url = "https://mern-book-store-backend-app.vercel.app/books";
     axios
       .delete(`${live_url}/${id}`)
       .then(() => {
