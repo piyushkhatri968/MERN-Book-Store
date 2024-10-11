@@ -13,9 +13,9 @@ const Home = () => {
 
   useEffect(() => {
     setLoading(true);
-    const live_url = "";
+    const live_url = "https://mern-book-store-seven.vercel.app/";
     axios
-      .get("http://localhost:8080/books")
+      .get(live_url)
       .then((response) => {
         setBooks(response.data.data);
         setLoading(false);

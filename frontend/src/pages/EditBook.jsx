@@ -16,8 +16,9 @@ const EditBook = () => {
 
   useEffect(() => {
     setLoading(true);
+    const live_url = "https://mern-book-store-seven.vercel.app/";
     axios
-      .get(`http://localhost:8080/books/${id}`)
+      .get(`${live_url}/${id}`)
       .then((response) => {
         setAuthor(response.data.author);
         setPublishYear(response.data.publishYear);
@@ -38,8 +39,9 @@ const EditBook = () => {
       publishYear,
     };
     setLoading(true);
+    const live_url = "https://mern-book-store-seven.vercel.app/";
     axios
-      .put(`http://localhost:8080/books/${id}`, data)
+      .put(`${live_url}/${id}`, data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar("Book Edited successfully", { variant: "success" });
