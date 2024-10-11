@@ -13,7 +13,7 @@ const Home = () => {
 
   useEffect(() => {
     setLoading(true);
-    const live_url = "https://mern-book-store-seven.vercel.app/";
+    const live_url = "https://mern-book-store-backend-app.vercel.app/";
     axios
       .get(live_url)
       .then((response) => {
